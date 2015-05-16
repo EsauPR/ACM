@@ -1,0 +1,53 @@
+//460 - Overlapping Rectangles
+#include <algorithm>
+#include <stdio.h>
+
+using namespace std;
+
+typedef struct Punto{
+	int x, y;
+}PUN;
+
+typedef struct Rectangulo{
+	PUN a, b;
+}REC;
+
+bool inRec(PUN p, REC r){ 
+	if( p.x < r.b.x && p.x > r.a.x && p.y > r.a.y && p.y < r.b.y)
+		return true;
+	return false;
+}
+
+bool isvalid(REC r)
+{
+	return (r.a.x<r.b.x && r.a.y < r.b.y)? true:false;
+}
+
+int main()
+{
+	REC r1,r2;
+	int nc;
+	PUN r1a,r1b,r2a,r2b,P1,P2;
+	scanf("%d", &nc);
+	
+	while(nc--)
+	{
+		scanf("%d %d %d %d", &r1.a.x, &r1.a.y, &r1.b.x, &r1.b.y);
+		scanf("%d %d %d %d", &r2.a.x, &r2.a.y, &r2.b.x, &r2.b.y);
+		
+			P1.x = max( r1.a.x , r2.a.x );
+			P1.y = max( r1.a.y , r2.a.y );
+			P2.x = min( r1.b.x , r2.b.x );
+			P2.y = min( r1.b.y , r2.b.y );
+		
+		REC rf;
+		rf.a=P1; rf.b=P2;
+		
+		if(isvalid(rf))
+			printf("%d %d %d %d\n", P1.x, P1.y, P2.x, P2.y);
+		else 	puts("No Overlap");
+		if(nc!=0) puts("");
+	}
+	
+	return 0;
+}
