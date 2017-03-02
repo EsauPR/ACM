@@ -3,7 +3,9 @@
 
 using namespace;
 
-int A[];
+#define MAX 50
+
+int A[MAX];
 int SIZE;
 
 int maxsum(  ) {

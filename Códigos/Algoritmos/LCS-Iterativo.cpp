@@ -1,3 +1,15 @@
+/*	
+	El Longest common subsequence problem (Problema de subsecuencia común más larga) 
+	también conocido como LCS problem, se trata de encontrar una subsecuencia más larga 
+	que es común en un conjunto de secuencias
+
+	Ejemplo
+
+	"coraco" y "comco"
+	
+	subsecuencia común más larga "coco"
+
+*/
 #include <stdio.h>
 #include <algorithm>
 #define MAX 1000 

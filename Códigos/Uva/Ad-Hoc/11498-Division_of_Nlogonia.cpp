@@ -1,34 +1,41 @@
 #include <stdio.h>
 
-void findLocation(cx, cy, x, y) {
+void findLocation(int cx, int cy, int x, int y) {
 	if (cx == x || cy == y) {
 		printf("%s", "divisa");
 	}
 	else if (x > cx && y > cy) {
-		printf("%s", "NE");
+		printf("NE");
 	}
 	else if (x > cx && y < cy) {
-		printf("%s", "SE");
+		printf("SE");
 	}
 	else if (x < cx && y > cy) {
-		printf("%s", "NO");
+		printf("NO");
 	}
 	else if (x < cx && y < cy) {
-		printf("%s", "SO");
+		printf("SO");
 	}
 }
 
 int main()
 {
-	int k, x, y, cx,cy, st;
+	int k, x, y, cx, cy;
+	//bool newLine = false;
 
 	while( scanf("%d", &k), k ) {
-		scanf("%d %d", &cx, &xy);
+		scanf("%d %d", &cx, &cy);
 
 		for (int i = 0; i < k; i++) {
 			scanf("%d %d", &x, &y);
-
+			/*
+			if ( newLine ){
+				puts("");
+			}
+			*/
+			//newLine = true;
 			findLocation(cx, cy, x, y);
+			puts("");
 		}
 	}
 }

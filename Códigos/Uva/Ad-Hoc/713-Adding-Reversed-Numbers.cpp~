@@ -1,9 +1,0 @@
-//713 - Adding Reversed Numbers
-
-int main()
-{
-	char num1, num2, res
-	int a, b,c;	
-	
-	return 0;
-}
