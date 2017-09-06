@@ -34,13 +34,7 @@ def main():
     X = int(read_line())
     N = int(read_line())
 
-    count = 0
-    i = 1
-    while pow(i, N) <= X:
-        count += power_sum(X, N, i);
-        i += 1
-
-    print(count)
+    print(power_sum(X, N, 0))
 
 
 if __name__ == '__main__':

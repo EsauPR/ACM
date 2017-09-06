@@ -28,11 +28,8 @@ int main(int argc, const char *argv[]) {
     int X, N, count=0, i;
     
     scanf("%d\n%d", &X, &N);
-    for (i=1; (int)pow(i, N) <= X; i++) {
-        count += power_sum(X, N, i);
-    }
     
-    printf("%d\n", count);
+    printf("%d\n", power_sum(X, N, 0));
 
     return 0;
 }
