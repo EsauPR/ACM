@@ -39,7 +39,7 @@ int sigma(int n)
 	}
 	if(n>1)
 		sol *= ( pow( n, 2 ) - 1) / ( n - 1 );
-	
+
 	return sol;
 }
 
@@ -48,12 +48,12 @@ int main()
 	sieve();
 	int nc,num;
 	scanf("%d", &nc);
-	
+
 	while(nc--){
 		scanf("%d", &num);
 		printf("%d\n",sigma(num)-num);
 	}
-	
+
 	return 0;
 }
 
