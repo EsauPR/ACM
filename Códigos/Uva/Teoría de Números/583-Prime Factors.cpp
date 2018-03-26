@@ -26,20 +26,18 @@ void c_sieve() {
 }
 
 void prime_factor(int number, bool is_negative) {
-    int index = 0;
     bool print_X = is_negative;
-    while (index < primes.size() && primes[index] * primes[index] <= number) {
-        while (number % primes[index] == 0) {
-            number /= primes[index];
+    for (int i = 0; i < primes.size() && primes[i] * primes[i] <= number; i++) {
+        while (number % primes[i] == 0) {
+            number /= primes[i];
             if (print_X) {
-                printf(" x %d", primes[index]);
+                printf(" x %d", primes[i]);
             }
             else {
-                printf(" %d", primes[index] );
+                printf(" %d", primes[i] );
             }
             print_X = true;
         }
-        index ++;
     }
 
     if (number != 1) {

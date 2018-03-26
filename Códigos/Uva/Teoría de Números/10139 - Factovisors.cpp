@@ -43,6 +43,7 @@ bool solve(int n, int m) {
             return false;
         }
     }
+
     if (m > 1 && m > n) {
         return false;
     }
