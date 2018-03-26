@@ -1,3 +1,7 @@
+/*
+    Problem: Prime factors
+    Url: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=524
+*/
 #include <stdio.h>
 #include <bitset>
 #include <vector>

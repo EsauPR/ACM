@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 
-int gcd(int a, int b, int *x, int *y){
+int gcd(int a, int b, int *x, int *y) {
 	if (b==0){
 		*x=1;
 		*y=0;
@@ -15,8 +15,7 @@ int gcd(int a, int b, int *x, int *y){
 	return g;
 }
 
-int main()
-{
+int main() {
 	int a, b,x,y;
 	while(scanf("%d %d", &a,&b) != EOF)
 	{

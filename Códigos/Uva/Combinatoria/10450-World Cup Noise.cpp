@@ -1,3 +1,7 @@
+/*
+    Problem: World cup noise
+    url: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1391
+*/
 #include <iostream>
 using namespace std;
 

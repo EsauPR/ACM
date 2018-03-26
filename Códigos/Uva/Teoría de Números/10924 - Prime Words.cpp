@@ -1,3 +1,7 @@
+/*
+    Problem: Prime words
+    Url: https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=1865
+*/
 #include <iostream>
 #include <bitset>
 #include <vector>
@@ -6,13 +10,11 @@ using namespace std;
 #define MAX 1050
 
 bitset<MAX> sieve;
-//vector<int> primes;
 
 void c_sieve() {
     sieve.set();
     for (int i = 2; i < MAX; i++) {
         if (sieve.test(i)) {
-            //primes.push_back(i);
             for (int j = i*2; j < MAX; j+=i) sieve.reset(j);
         }
     }
@@ -37,12 +39,6 @@ int word_to_num(char* word) {
 int main(int argc, char const *argv[]) {
     char word[30];
     c_sieve();
-
-    /**
-    for (int i = 0; i < primes.size(); i++) {
-        printf("%d\n", primes[i]);
-    }
-    // **/
 
     while(scanf("%s", word) != EOF) {
         if (sieve.test(word_to_num(word))) {
