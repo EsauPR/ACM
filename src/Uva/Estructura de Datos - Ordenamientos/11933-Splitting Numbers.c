@@ -13,7 +13,7 @@ int main(int argc, char const *argv[]) {
         int a = 0;
         int b = 0;
 
-        for (int i = 0, j = 0; i < 31; ++i) {
+        for (int i = 0, j = 0; i < 31; i++) {
             if (number & (1 << i)) {
                 if (j++ & 1) {
                     a = a | (1 << i);
@@ -22,7 +22,9 @@ int main(int argc, char const *argv[]) {
                 }
             }
         }
+
         printf("%d %d\n", b, a);
     }
+
     return 0;
 }
