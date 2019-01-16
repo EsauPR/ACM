@@ -30,7 +30,7 @@ void solve(string rule, int rule_char, string password) {
 }
 
 
-int main(int argc, char const *argv[]){
+int main(int argc, char const *argv[]) {
     int dict_tam;
     string word;
 
