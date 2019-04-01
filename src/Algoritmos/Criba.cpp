@@ -14,7 +14,7 @@ void llenacriba(){
 		if( criba[ i ] ) {
 			primos.push_back( i );
 			for( int j = i<<1; j < MAX; j+=i )
-				criba.reset(j);			
+				criba.reset(j);
 		}
 }
 
