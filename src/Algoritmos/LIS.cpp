@@ -1,10 +1,10 @@
 /**
- *	The longest increasing subsequence problem is to find a subsequence of a given sequence 
- *	in which the subsequence's elements are in sorted order, lowest to highest, and in which 
+ *	The longest increasing subsequence problem is to find a subsequence of a given sequence
+ *	in which the subsequence's elements are in sorted order, lowest to highest, and in which
  *	the subsequence is as long as possible. This subsequence is not necessarily contiguous, or unique.
  */
 
-/* 
+/*
 in
 	4 -1 5 8 2 3 12 7 9 10
 out
@@ -23,18 +23,16 @@ int A[MAX];
 int LIS[MAX];
 int PATH[MAX];
 
-void printPath(int pos ) 
-{
+void printPath(int pos ) {
 	if (pos == -1) {
 		return;
 	}
 
 	printPath( PATH[pos] );
-	printf("%d\n", A[pos] );
+	printf("%d ", A[pos]);
 }
 
-int lis_cuadratic(int size ) 
-{
+void lis_cuadratic(int size) {
 	/*
 		LIS(i) = 1 + max[j=1 to i-1]( LIS(j) ) if A[j] > A[i]
 		LIS(i) = 1 if no exist A[j] > A[i] for j=1 to i-1
@@ -42,7 +40,6 @@ int lis_cuadratic(int size )
 	int maxi=0, pos = 0;
 
 	for (int i = 0; i < size; i++) {
-		
 		LIS[i] = 1;
 		PATH[i] = -1;
 
@@ -61,28 +58,29 @@ int lis_cuadratic(int size )
 		}
 	}
 
-	printf("%d\n-\n", maxi);
+	printf("Size: %d - Secuence: ", maxi);
 	printPath(pos);
+	puts("");
 }
 
 int ceilIndex(int l, int r, int key) {
 	while (r-l > 1) {
 		int m = l + (r-l)/2;
-		
-		if (A[LIS[m]] >= key)
+		if (A[LIS[m]] >= key) {
 			r = m;
-		else
+		}
+		else {
 			l = m;
+		}
 	}
 
 	return r;
 }
 
-void lis_nlogn(int size) 
-{
+void lis_nlogn(int size) {
 	/*
 		LIS(i) = index of the minimum value of the last value of increasing subsequence of length i
-		Example 
+		Example
 		A = [ 3, 4, -1, 1 ]
 
 		For LIS(2) :
@@ -106,18 +104,19 @@ void lis_nlogn(int size)
 			LIS[1] = i;
 		}
 		else {
-			int index = ceilIndex(0,maxi, A[i]);
+			int index = ceilIndex(0, maxi, A[i]);
 			LIS[ index ] = i;
 			PATH[i] = LIS[index-1];
 		}
 	}
-	
-	printf("%d\n-\n", maxi);
+
+	printf("Size: %d - Secuence: ", maxi);
 	printPath(LIS[maxi]);
+	puts("");
 }
 
-int main(int argc, char const *argv[])
-{
+
+int main(int argc, char const *argv[]) {
 	int num, count = 0;
 
 	while (scanf("%d", &num) != EOF) {
@@ -127,7 +126,6 @@ int main(int argc, char const *argv[])
 	}
 
 	lis_cuadratic(count);
-	puts("");
 	lis_nlogn(count);
 
 	return 0;
