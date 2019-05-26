@@ -20,7 +20,7 @@ struct fraction
 			q*=-1;
 		}
 	}
-	
+
 	fraction operator + (const fraction &a) const
 	{
 		int x=p*a.q+q*a.p;
