@@ -1,7 +1,5 @@
 *.class
-*.out
-*.in
 *.pyc
-*.out
+a.out
 .python-version
 .vscode
