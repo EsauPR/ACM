@@ -3,6 +3,11 @@
  * https://cses.fi/problemset/task/2205
  */
 
+/*
+ * Best solution is: graycode from wikipedia
+ * i ^ (i >> 1) for i in 0:2^n
+ */
+
 #include <iostream>
 #include <cmath>
 
